@@ -12,7 +12,7 @@ include "admin/dbConfig.php";
 if(isset($_GET['search'])){
     $s_query = $_GET['s_query'];
 
-    $query = "Select * from products where Name LIKE '%$s_query%' or Category LIKE '%$s_query%'";
+    $query = "Select * from products where Name LIKE '%$s_query%' or Category LIKE '%$s_query%' or Details LIKE '%$s_query%' ";
     $result = mysqli_query($db,$query);
 
     if(mysqli_num_rows($result)==0){
@@ -31,10 +31,10 @@ if(isset($_GET['search'])){
             <div style="background-color: #afd9ee;margin-bottom: 2%;" class="bestsellers_item discount">
 
                 <div class="bestsellers_item_container d-flex flex-row align-items-center justify-content-start">
-                    <div class="bestsellers_image"><img src="<?php echo 'uploads/' . $row['Image'] . "" ?>" alt="">
+                    <div class="bestsellers_image"><a href="product.php?id=<?php echo $id ?>"><img src="<?php echo 'uploads/' . $row['Image'] . "" ?>" alt=""></a>
                     </div>
                     <div class="bestsellers_content">
-                        <div class="bestsellers_category"><a href="#"><?php echo $row['Category'] ?></a></div>
+                        <div class="bestsellers_category"><a href="product.php?id=<?php echo $id ?>"><?php echo $row['Category'] ?></a></div>
                         <div class="bestsellers_name"><a href="product.php?id=<?php echo $id ?>"><?php echo $name ?></a>
                         </div>
                         <!--            <div class="rating_r rating_r_4 bestsellers_rating"><i></i><i></i><i></i><i></i><i></i></div>-->

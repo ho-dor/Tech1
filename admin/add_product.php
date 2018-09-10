@@ -5,6 +5,7 @@
 <!-- * Time: 10:23-->
 <!-- */-->
 <?php
+include "permission.php";
 include "admin_header.php";?>
 <body>
 

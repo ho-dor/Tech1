@@ -33,7 +33,7 @@ while($row = mysqli_fetch_assoc($result)) {
 <div style="background-color: #afd9ee;margin-bottom: 2%;" class="bestsellers_item discount">
 
     <div class="bestsellers_item_container d-flex flex-row align-items-center justify-content-start">
-        <div class="bestsellers_image"><img src="<?php echo 'uploads/'.$row['Image']."" ?>" alt=""></div>
+        <div class="bestsellers_image"><a href="product.php?id=<?php echo $id ?>"><img src="<?php echo 'uploads/'.$row['Image']."" ?>" alt=""></a></div>
         <div class="bestsellers_content">
             <div class="bestsellers_category"><a href="#"><?php echo $row['Category'] ?></a></div>
             <div class="bestsellers_name"><a href="product.php?id=<?php echo $id ?>"><?php echo $name ?></a></div>

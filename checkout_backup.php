@@ -5,9 +5,6 @@
  * Date: 18-07-2018
  * Time: 14:01
  */
-if(empty($_SESSION['uname'])){
-    header("location: login.php");
-}
 include "header.php";
 include "admin/dbConfig.php";
 ?>
@@ -15,51 +12,41 @@ include "admin/dbConfig.php";
 <form action="mailer.php" method="post" id="contact_form">
 
     </div>
-<div class="contact_form">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="contact_form_container">
-                    <div class="contact_form_title">Checkout</div>
+    <div class="contact_form" style="width: 50%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="contact_form_container">
+                        <div class="contact_form_title">Checkout</div>
 
 
-                        <div class="contact_form_inputs flex-md-row flex-column justify-content-between align-items-between" style="margin-right:10%;width:50%; float:left;">
-<!--                            <input type="text" id="contact_form_name" class="contact_form_name input_field" name="firstname" placeholder="Your Firstname" required="required" data-error="Name is required.">-->
+                        <div class="contact_form_inputs flex-md-row flex-column justify-content-between align-items-between">
+                            <!--                            <input type="text" id="contact_form_name" class="contact_form_name input_field" name="firstname" placeholder="Your Firstname" required="required" data-error="Name is required.">-->
                             <div class="contact_form_text" style="margin: 5%; margin-left: 0%">
-<!--                                <input type="textarea" id="contact_form_email" name="address" class="contact_form_email input_field" placeholder="Address" required="required" data-error="Address is required.">-->
+                                <!--                                <input type="textarea" id="contact_form_email" name="address" class="contact_form_email input_field" placeholder="Address" required="required" data-error="Address is required.">-->
                             </div>
-                            <div class="contact_form_text" style=" margin:5%;margin-left: 0%">
+                            <div class="contact_form_text" style="margin: 5%; margin-left: 0%">
                                 <input type="number" id="contact_form_phone" name="phone" class="contact_form_phone input_field" placeholder="Phone">
                             </div>    <div class="contact_form_text" style="margin: 5%;margin-left: 0%">
                                 <input type="email" name="email" id="contact_form_phone" class="contact_form_phone input_field" placeholder="E-Mail">
                             </div>    <div class="contact_form_text" style="margin: 5%;margin-left: 0%">
-<!--                                <input name="username" type="text" id="contact_form_phone" class="contact_form_phone input_field" placeholder="Username">-->
+                                <!--                                <input name="username" type="text" id="contact_form_phone" class="contact_form_phone input_field" placeholder="Username">-->
                             </div>    <div class="contact_form_text" style="margin: 5%;margin-left: 0%">
-<!--                                <input name="password" type="password" id="contact_form_phone" class="contact_form_phone input_field" placeholder="Password">-->
+                                <!--                                <input name="password" type="password" id="contact_form_phone" class="contact_form_phone input_field" placeholder="Password">-->
                             </div>    <div class="contact_form_text" style="margin: 5%;margin-left: 0%">
-<!--                                <input name="gender" type="radio" id="contact_form_phone" value="male"><h4 style="color: #0d82d3">Male</h4>-->
-<!--                                <input name="gender" type="radio" id="contact_form_phone" value="female"><h4 style="color: #0d82d3">Female</h4>-->
+                                <!--                                <input name="gender" type="radio" id="contact_form_phone" value="male"><h4 style="color: #0d82d3">Male</h4>-->
+                                <!--                                <input name="gender" type="radio" id="contact_form_phone" value="female"><h4 style="color: #0d82d3">Female</h4>-->
                             </div>
-                    <div class="contact_form_text">
-                        <textarea id="contact_form_message" class="text_field contact_form_message" name="address" rows="4" placeholder="Address" required="required" data-error="Please, write us a message."></textarea>
-                    </div>
-                    <div class="contact_form_button">
-                        <input type="submit" class="button contact_submit_button" name="confirm" value="Confirm Order">
-                    </div>
-<!--                            <div class="reviews_title_container">-->
-<!--                                <h3 style="margin:4%;" class="reviews_title">Order Summary</h3>-->
-<!--                            </div>-->
-                        </div>
-                    <div class="reviews_title_container">
-                        <h3 class="reviews_title">Order Summary</h3>
-                        <?php
-                        $query_total = "Select sum(SubTotal) as 'Total' from cart Where User_name='$username'";
-                        $result_total = mysqli_query($db,$query_total) or die("Query Failed");
-                        $row = mysqli_fetch_assoc($result_total);
-                        echo " <div class=\"review_text\"><h4 style='color: black;float:right;'>Grand Total : Rs. ".$row['Total']."</h4></div>";
-                        ?>
-                    </div>
-                        <div style="width: 40%;float: right;" class="orderdetails">
+                            <div class="contact_form_text">
+                                <textarea id="contact_form_message" class="text_field contact_form_message" name="address" rows="4" placeholder="Address" required="required" data-error="Please, write us a message."></textarea>
+                            </div>
+                            <div class="contact_form_button">
+                                <input type="submit" class="button contact_submit_button" name="confirm" value="Confirm Order">
+                            </div>
+                            <div class="reviews_title_container">
+                                <h3 style="margin:4%;" class="reviews_title">Order Summary</h3>
+                            </div>
+
 
                             <table style="display: inline;width: 40%;">
                                 <?php
@@ -88,8 +75,8 @@ include "admin/dbConfig.php";
                                                             <!--                    <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>-->
                                                             <div class="review_time"><?php echo "Quantity :". $quantity ?></div>
                                                         </div>
-                                                        <div class="review_text"><p style="color: black"><?php echo "Price : Rs.".$price ?></p></div>
-                                                        <div class="review_text"><p style="color: black"><?php echo "SubTotal : Rs.".$subtotal ?></p></div>
+                                                        <div class="review_text"><p><?php echo "Price : Rs.".$price ?></p></div>
+                                                        <div class="review_text"><p><?php echo "SubTotal : Rs.".$subtotal ?></p></div>
                                                     </div>
                                                 </td>
                                             </div>
@@ -99,14 +86,18 @@ include "admin/dbConfig.php";
                                     <?php
                                 }
                                 ?>
-
+                                <?php
+                                $query_total = "Select sum(SubTotal) as 'Total' from cart Where User_name='$username'";
+                                $result_total = mysqli_query($db,$query_total) or die("Query Failed");
+                                $row = mysqli_fetch_assoc($result_total);
+                                echo " <div class=\"review_text\"><p>Grand Total : Rs. ".$row['Total']."</p></div>";
+                                ?>
                             </table>
-                        </div>
-                    </form>
+</form>
 
-
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>

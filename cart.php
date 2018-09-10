@@ -23,8 +23,16 @@ if(isset($_POST['addCart'])) {
     $date = date("y-m-d  h:i:s");
     $quantity = $_POST['quantity_input'];
     $total = $price * $quantity;
+    $query_search = "Select * from cart where P_Name = '$name' and User_name = '$user'";
+    $query_search_result = mysqli_query($db,$query_search);
+    if(mysqli_num_rows($query_search_result)==0){
     $query_insert = "Insert Into cart(Category,P_Name,User_name,Quantity,Price,Image,Date,SubTotal) Values('$cat','$name','$user','$quantity','$price','$img','$date','$total')";
-    $result_insert = mysqli_query($db, $query_insert) or die("Query Failed");
+    $result_insert = mysqli_query($db, $query_insert) or die(" Insert Query Failed");
+    }
+    else{
+        $query_update = "Update cart set Quantity = Quantity + $quantity,SubTotal = (Quantity + $quantity)*price where P_name = '$name' and User_name = '$user'";
+        $query_update_result = mysqli_query($db,$query_update)or die("Update query failed");
+    }
 }
     ?>
     <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">

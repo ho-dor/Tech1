@@ -24,60 +24,60 @@ include "admin/dbConfig.php";
 
 	<!-- Characteristics -->
 
-	<div class="characteristics">
-		<div class="container">
-			<div class="row">
-
-				<!-- Char. Item -->
-				<div class="col-lg-3 col-md-6 char_col">
-					
-					<div class="char_item d-flex flex-row align-items-center justify-content-start">
-						<div class="char_icon"><img src="images/char_1.png" alt=""></div>
-						<div class="char_content">
-							<div class="char_title">Free Delivery</div>
-							<div class="char_subtitle">from Rs.500</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Char. Item -->
-				<div class="col-lg-3 col-md-6 char_col">
-					
-					<div class="char_item d-flex flex-row align-items-center justify-content-start">
-						<div class="char_icon"><img src="images/char_2.png" alt=""></div>
-						<div class="char_content">
-							<div class="char_title">Free Delivery</div>
-							<div class="char_subtitle">from Rs.500</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Char. Item -->
-				<div class="col-lg-3 col-md-6 char_col">
-					
-					<div class="char_item d-flex flex-row align-items-center justify-content-start">
-						<div class="char_icon"><img src="images/char_3.png" alt=""></div>
-						<div class="char_content">
-							<div class="char_title">Free Delivery</div>
-							<div class="char_subtitle">from Rs.500</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Char. Item -->
-				<div class="col-lg-3 col-md-6 char_col">
-					
-					<div class="char_item d-flex flex-row align-items-center justify-content-start">
-						<div class="char_icon"><img src="images/char_4.png" alt=""></div>
-						<div class="char_content">
-							<div class="char_title">Free Delivery</div>
-							<div class="char_subtitle">from Rs.500</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<!--	<div class="characteristics">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!---->
+<!--				<!-- Char. Item -->
+<!--				<div class="col-lg-3 col-md-6 char_col">-->
+<!--					-->
+<!--					<div class="char_item d-flex flex-row align-items-center justify-content-start">-->
+<!--						<div class="char_icon"><img src="images/char_1.png" alt=""></div>-->
+<!--						<div class="char_content">-->
+<!--							<div class="char_title">Free Delivery</div>-->
+<!--							<div class="char_subtitle">from Rs.500</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!---->
+<!--				<!-- Char. Item -->
+<!--				<div class="col-lg-3 col-md-6 char_col">-->
+<!--					-->
+<!--					<div class="char_item d-flex flex-row align-items-center justify-content-start">-->
+<!--						<div class="char_icon"><img src="images/char_2.png" alt=""></div>-->
+<!--						<div class="char_content">-->
+<!--							<div class="char_title">Free Delivery</div>-->
+<!--							<div class="char_subtitle">from Rs.500</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!---->
+<!--				<!-- Char. Item -->
+<!--				<div class="col-lg-3 col-md-6 char_col">-->
+<!--					-->
+<!--					<div class="char_item d-flex flex-row align-items-center justify-content-start">-->
+<!--						<div class="char_icon"><img src="images/char_3.png" alt=""></div>-->
+<!--						<div class="char_content">-->
+<!--							<div class="char_title">Free Delivery</div>-->
+<!--							<div class="char_subtitle">from Rs.500</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!---->
+<!--				<!-- Char. Item -->
+<!--				<div class="col-lg-3 col-md-6 char_col">-->
+<!--					-->
+<!--					<div class="char_item d-flex flex-row align-items-center justify-content-start">-->
+<!--						<div class="char_icon"><img src="images/char_4.png" alt=""></div>-->
+<!--						<div class="char_content">-->
+<!--							<div class="char_title">Free Delivery</div>-->
+<!--							<div class="char_subtitle">from Rs.500</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
 
 
 	<!-- Hot New Arrivals -->
@@ -119,7 +119,7 @@ include "admin/dbConfig.php";
 										<div class="arrivals_slider_item">
 											<div class="border_active"></div>
 											<div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
-												<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="uploads/<?php echo $img ?>" alt=""></div>
+                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><a href="product.php?id=<?php echo $id ?>"><img src="uploads/<?php echo $img ?>" alt=""></a></div>
 												<div class="product_content">
 													<div class="product_price"><?php echo $price ?></div>
 													<div class="product_name"><div><a href="product.php?id=<?php echo $id ?>"><?php echo $name ?></a></div></div>
@@ -199,9 +199,9 @@ include "admin/dbConfig.php";
                                 <!-- Best Sellers Item -->
                                 <div class="bestsellers_item discount">
                                     <div class="bestsellers_item_container d-flex flex-row align-items-center justify-content-start">
-                                        <div class="bestsellers_image"><img src="uploads/<?php echo $img ?>" alt=""></div>
+                                        <div class="bestsellers_image"><a href="product.php?id=<?php echo $id ?>"><img src="uploads/<?php echo $img ?>" alt=""></a></div>
                                         <div class="bestsellers_content">
-                                            <div class="bestsellers_category"><a href="#"><?php echo $cat ?></a></div>
+                                            <div class="bestsellers_category"><a href="product.php?id=<?php echo $id ?>"><?php echo $cat ?></a></div>
                                             <div class="bestsellers_name"><a href="product.php?id=<?php echo $id ?>"><?php echo $name ?></a>
                                             </div>
 <!--                                            <div class="rating_r rating_r_4 bestsellers_rating">-->
@@ -231,9 +231,9 @@ include "admin/dbConfig.php";
                                 <!-- Best Sellers Item -->
                                 <div class="bestsellers_item discount">
                                     <div class="bestsellers_item_container d-flex flex-row align-items-center justify-content-start">
-                                        <div class="bestsellers_image"><img src="uploads/<?php echo $img ?>" alt=""></div>
+                                        <div class="bestsellers_image"><a href="product.php?id=<?php echo $id ?>"><img src="uploads/<?php echo $img ?>" alt=""></a></div>
                                         <div class="bestsellers_content">
-                                            <div class="bestsellers_category"><a href="#"><?php echo $cat ?></a></div>
+                                            <div class="bestsellers_category"><a href="product.php?id=<?php echo $id ?>"><?php echo $cat ?></a></div>
                                             <div class="bestsellers_name"><a href="product.php?id=<?php echo $id ?>"><?php echo $name ?></a>
                                             </div>
 <!--                                            <div class="rating_r rating_r_4 bestsellers_rating">-->
@@ -264,9 +264,9 @@ include "admin/dbConfig.php";
                                 <!-- Best Sellers Item -->
                                 <div class="bestsellers_item discount">
                                     <div class="bestsellers_item_container d-flex flex-row align-items-center justify-content-start">
-                                        <div class="bestsellers_image"><img src="uploads/<?php echo $img ?>" alt=""></div>
+                                        <div class="bestsellers_image"><a href="product.php?id=<?php echo $id ?>"><img src="uploads/<?php echo $img ?>" alt=""></a></div>
                                         <div class="bestsellers_content">
-                                            <div class="bestsellers_category"><a href="#"><?php echo $cat ?></a></div>
+                                            <div class="bestsellers_category"><a href="product.php?id=<?php echo $id ?>"><?php echo $cat ?></a></div>
                                             <div class="bestsellers_name"><a href="product.php?id=<?php echo $id ?>"><?php echo $name ?></a>
                                             </div>
 <!--                                            <div class="rating_r rating_r_4 bestsellers_rating">-->
@@ -296,9 +296,9 @@ include "admin/dbConfig.php";
                                 <!-- Best Sellers Item -->
                                 <div class="bestsellers_item discount">
                                     <div class="bestsellers_item_container d-flex flex-row align-items-center justify-content-start">
-                                        <div class="bestsellers_image"><img src="uploads/<?php echo $img ?>" alt=""></div>
+                                        <div class="bestsellers_image"><a href="product.php?id=<?php echo $id ?>"><img src="uploads/<?php echo $img ?>" alt=""></a></div>
                                         <div class="bestsellers_content">
-                                            <div class="bestsellers_category"><a href="#"><?php echo $cat ?></a></div>
+                                            <div class="bestsellers_category"><a href="product.php?id=<?php echo $id ?>"><?php echo $cat ?></a></div>
                                             <div class="bestsellers_name"><a href="product.php?id=<?php echo $id ?>"><?php echo $name ?></a>
                                             </div>
 <!--                                            <div class="rating_r rating_r_4 bestsellers_rating">-->

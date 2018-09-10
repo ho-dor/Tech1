@@ -25,6 +25,7 @@ include "admin/dbConfig.php";
     <link rel="stylesheet" type="text/css" href="plugins/slick-1.8.0/slick.css">
     <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 
 </head>
 
@@ -43,13 +44,13 @@ include "admin/dbConfig.php";
                 <div class="row">
                     <div class="col d-flex flex-row">
                         <div class="top_bar_content ml-auto">
-                            <div class="top_bar_menu">
-                                <ul class="standard_dropdown top_bar_dropdown">
-                                    <li>
-                                        <a href="admin_login.php">Admin<i class="fas fa-chevron-down"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
+<!--                            <div class="top_bar_menu">-->
+<!--                                <ul class="standard_dropdown top_bar_dropdown">-->
+<!--                                    <li>-->
+<!--                                        <a href="admin_login.php">Admin<i class="fas fa-chevron-down"></i></a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
                             <div class="top_bar_user">
                                 <div class="user_icon"><img src="images/user.svg" alt=""></div>
                                 <div><?php
@@ -84,7 +85,7 @@ include "admin/dbConfig.php";
                     <!-- Logo -->
                     <div class="col-lg-2 col-sm-3 col-3 order-1">
                         <div class="logo_container">
-                            <div class="logo"><a href="#">Tech1</a></div>
+                            <div class="logo"><a href="index.php"><img src="images/logo.png"></a></div>
                         </div>
                     </div>
 
@@ -93,8 +94,8 @@ include "admin/dbConfig.php";
                         <div class="header_search">
                             <div class="header_search_content">
                                 <div class="header_search_form_container">
-                                    <form action="#" class="header_search_form clearfix">
-                                        <input type="search" required="required" class="header_search_input" placeholder="Search for products...">
+                                    <form action="search.php" class="header_search_form clearfix">
+                                        <input type="search" required="required" name="s_query" class="header_search_input" placeholder="Search for products...">
                                         <div class="custom_dropdown">
                                             <div class="custom_dropdown_list">
                                                 <span class="custom_dropdown_placeholder clc"></span>
@@ -109,7 +110,7 @@ include "admin/dbConfig.php";
                                                 </ul>
                                             </div>
                                         </div>
-                                        <button type="submit" class="header_search_button trans_300" value="Submit"><img src="images/search.png" alt=""></button>
+                                        <button type="submit" name = "search" class="header_search_button trans_300" value="Submit"><img src="images/search.png" alt=""></button>
                                     </form>
                                 </div>
                             </div>
@@ -135,7 +136,7 @@ include "admin/dbConfig.php";
                                         <div class="cart_count"><span><?php
                                                 if(isset($_SESSION['uname'])) {
                                                     $username = $_SESSION['uname'];
-                                                    $q = "Select COUNT(*) as 'no' FROM cart WHERE User_name='$username'";
+                                                    $q = "Select SUM(Quantity) as 'no' FROM cart WHERE User_name='$username'";
                                                     $r = mysqli_query($db, $q) or die("Query Failed");
                                                     $row = mysqli_fetch_assoc($r);
                                                     echo $row['no'];
@@ -217,7 +218,7 @@ include "admin/dbConfig.php";
                             <!-- Main Nav Menu -->
                             <div class="main_nav_menu ml-auto">
                                 <ul class="standard_dropdown main_nav_dropdown">
-                                    <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="index.php">Home<i class="fas fa-chevron-down"></i></a></li>
                                     <li class="hassubs">
                                         <a href="#">Super Deals<i class="fas fa-chevron-down"></i></a>
                                         <ul>
@@ -291,7 +292,7 @@ include "admin/dbConfig.php";
                         <div class="page_menu_content">
 
                             <div class="page_menu_search">
-                                <form action="#">
+                                <form action="">
                                     <input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
                                 </form>
                             </div>

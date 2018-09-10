@@ -19,7 +19,7 @@ include "admin/dbConfig.php";
     <title>Shop</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="OneTech shop project">
+    <meta name="description" content="Tech1 shop project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
     <link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
@@ -31,6 +31,7 @@ include "admin/dbConfig.php";
     <link rel="stylesheet" type="text/css" href="styles/shop_responsive.css">
     <link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 
 </head>
 
@@ -49,13 +50,13 @@ include "admin/dbConfig.php";
                 <div class="row">
                     <div class="col d-flex flex-row">
                         <div class="top_bar_content ml-auto">
-                            <div class="top_bar_menu">
-                                <ul class="standard_dropdown top_bar_dropdown">
-                                    <li>
-                                        <a href="admin_login.php">Admin<i class="fas fa-chevron-down"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
+<!--                            <div class="top_bar_menu">-->
+<!--                                <ul class="standard_dropdown top_bar_dropdown">-->
+<!--                                    <li>-->
+<!--<!--                                        <a href="admin_login.php">Admin<i class="fas fa-chevron-down"></i></a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
                             <div class="top_bar_user">
                                 <div class="user_icon"><img src="images/user.svg" alt=""></div>
                                 <div><?php
@@ -90,7 +91,7 @@ include "admin/dbConfig.php";
                     <!-- Logo -->
                     <div class="col-lg-2 col-sm-3 col-3 order-1">
                         <div class="logo_container">
-                            <div class="logo"><a href="index.php">Tech1</a></div>
+                            <div class="logo"><a href="index.php"><img src="images/logo.png"></a></div>
                         </div>
                     </div>
 
@@ -141,7 +142,7 @@ include "admin/dbConfig.php";
                                         <div class="cart_count"><span><?php
                                                 if(isset($_SESSION['uname'])) {
                                                     $username = $_SESSION['uname'];
-                                                    $q = "Select COUNT(*) as 'no' FROM cart WHERE User_name='$username'";
+                                                    $q = "Select SUM(Quantity) as 'no' FROM cart WHERE User_name='$username'";
                                                     $r = mysqli_query($db, $q) or die("Query Failed");
                                                     $row = mysqli_fetch_assoc($r);
                                                     echo $row['no'];
@@ -223,7 +224,7 @@ include "admin/dbConfig.php";
                             <!-- Main Nav Menu -->
                             <div class="main_nav_menu ml-auto">
                                 <ul class="standard_dropdown main_nav_dropdown">
-                                    <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="index.php">Home<i class="fas fa-chevron-down"></i></a></li>
                                     <li class="hassubs">
                                         <a href="#">Super Deals<i class="fas fa-chevron-down"></i></a>
                                         <ul>

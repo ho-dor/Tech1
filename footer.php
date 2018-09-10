@@ -36,7 +36,6 @@
             </div>
 
 
-
             <div class="col-lg-2">
                 <div class="footer_column">
                     <div class="footer_title">Customer Care</div>

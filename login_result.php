@@ -25,7 +25,12 @@ if (isset($_POST['submit'])) {
                 $_SESSION['name'] = $row['FirstName'];
                 $_SESSION['email']=$row['E-Mail'];
                 $_SESSION['phone']=$row['Phone'];
-                header("location: index.php");
+                if($_SESSION['pre_url'] === "http://localhost/store/login_result.php") {
+
+                    header("location: index.php");
+                }else{
+                    header("location:" . $_SESSION['pre_url']);
+                }
                 //break;
             } else {
                 $flag=1;
